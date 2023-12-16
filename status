@@ -1,0 +1,5 @@
+#!/bin/bash
+
+su -m ircd -c "/usr/local/unrealircd/unrealircd status"
+sleep 60
+exec /status

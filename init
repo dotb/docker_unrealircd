@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Update user and group IDs
+echo "Setting user and group IDs"
+groupmod -g $PGID ircd
+usermod -u $PUID ircd
+
+# Update file ownership
+echo "Updating file permissions"
+chown -R $PUID:$PGID /home/ircd
+chown -R $PUID:$PGID /usr/local/unrealircd
+
+# Start the ircd
+echo "Starting IRCd"
+su -m ircd -c "/usr/local/unrealircd/unrealircd start"
+echo "Logging status"
+/status
