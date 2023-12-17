@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Make any default configuration upgrades
+echo "Copying configuration upgrades"
+cp /home/ircd/example-conf/*.default.conf /usr/local/unrealircd/conf/
+cp /home/ircd/example-conf/*.optional.conf /usr/local/unrealircd/conf/
+
 # Update user and group IDs
 echo "Setting user and group IDs"
 groupmod -g $PGID ircd
