@@ -25,7 +25,7 @@ make install
 chown -R ircd:ircd /usr/local/unrealircd/*
 mv /usr/local/unrealircd/conf /home/ircd/example-conf
 # Cleanup the build environment
-rm -fR unrealircd*
+rm -fR /home/ircd/unrealircd*
 apt-get --purge -y remove apt-utils wget build-essential pkg-config gdb libssl-dev libpcre2-dev libargon2-0-dev libsodium-dev libc-ares-dev libcurl4-openssl-dev
 apt -y autoremove
 EOF
